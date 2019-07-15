@@ -1,0 +1,64 @@
+#include <bits/stdc++.h>
+using namespace std;
+typedef struct node
+{
+    struct node *left,*right;
+    int item;
+}n;
+n *newNode(int key)
+{
+    n *temp=(n*)malloc(sizeof(n));
+    temp->item=key;
+    temp->left=temp->right=NULL;
+    return temp;
+    
+}
+struct node* insert(struct node* node,int key)
+{
+    if(node==NULL) return newNode(key);
+    if(node->item>key) node->left  = insert(node->left,key);
+    else if(node->item<key) node->right  = insert(node->right,key);
+    return node;
+}
+void inorder(struct node* node)
+{
+    if(node!=NULL)
+    {
+        inorder(node->left);
+        cout<<node->item<<" ";
+        inorder(node->right);
+        
+    }
+}
+struct node* deleteNode(struct node* node,int key)
+{
+    if(node==NULL) return node;
+    if(node->item>key) {node->left=deleteNode(node->left,key); return node;}
+    else if(node->item<key) {node->right=deleteNode(node->right,key); return node;}
+    if(node->left==NULL)
+    {
+        struct node* temp=node->right;
+        delete node;
+        return temp;
+    }
+    else if(node->right==NULL)
+    {
+        struct node* temp=node->left;
+        delete node;
+        return temp;
+    }
+    else
+    {
+        n* succP=node->right;
+        n* succ=node->right;
+        while(succ->left!=NULL)
+        {
+            succP=succ;
+            succ=succ->left;
+        }
+        succP->left=succ->right;
+        node->item=succ->item;
+        delete succ;
+        return node;
+    }
+}
