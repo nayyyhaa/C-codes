@@ -1,1 +1,1 @@
-# That's how you do c++.
+# That's how you do C++.
