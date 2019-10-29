@@ -9,28 +9,17 @@ using namespace std;
 #define ull unsigned long long int
 #define mod 1000000007
 
-void bfs(int node,vector<int> v[],int visited[])
+void dfs(int node,vector<int> v[],int visited[])
 {
+	if(visited[node]==1)
+		return;
+	visited[node]=1;
+	for(int i=0;i<v[node].size();i++)
+	{
+		dfs(v[node][i],v,visited);
+	}
 
-    queue<int> q;
-    q.push(node);
-    while(!q.empty())
-    {
-
-        node=q.front();
-        q.pop();
-	    if(visited[node]==1)
-        {
-            continue;
-        }
-        cout<<node<<" ";
-    	visited[node]=1;
-    	for(int i=0;i<v[node].size();i++)
-    	{
-    		q.push(v[node][i]);
-    	}
-    }
-
+	cout<<node<<" ";
 } 
 int main() {
 	fastIO;
@@ -54,22 +43,23 @@ int main() {
     	v[u2].push_back(u1);
     }
     int visited[n+1];
-    for(i=0;i<=n;i++)
-    {
-    	for(j=0;j<v[i].size();j++)
-    	{
-    		cout<<v[i][j]<<" ";
-    	}
-    	cout<<endl;
-    }
+    // for(i=0;i<=n;i++)
+    // {
+    // 	for(j=0;j<v[i].size();j++)
+    // 	{
+    // 		cout<<v[i][j]<<" ";
+    // 	}
+    // 	cout<<endl;
+    // }
     for(i=0;i<=n;i++)
     {
     	visited[i]=0;
     }
+    // cout<<"yo\n";
     // makign visited array 0 represents this node is not visited 
     // and 1 represents visited node
     //graph input done
     // applying dfs
-    // bfs(1,v,visited);
+    dfs(1,v,visited);
 	return 0;
 }

@@ -54,14 +54,7 @@ int main() {
         v[u2].push_back(u1);
     }
     int visited[n+1];
-    // for(i=0;i<=n;i++)
-    // {
-    //  for(j=0;j<v[i].size();j++)
-    //  {
-    //      cout<<v[i][j]<<" ";
-    //  }
-    //  cout<<endl;
-    // }
+    
     for(i=0;i<=n;i++)
     {
         visited[i]=0;
@@ -69,7 +62,7 @@ int main() {
     // makign visited array 0 represents this node is not visited 
     // and 1 represents visited node
     //graph input done
-    // applying dfs
+    // applying bfs
     bfs(1,v,visited);
     return 0;
 }
