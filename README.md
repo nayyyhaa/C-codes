@@ -13,4 +13,4 @@ Steps to perform:
 4. Try to properly document code wherever possible and necessary.
 5. Also, if possible, put a commented section of test case and possible explanation for the output.
 
-# Happy Contibutiing. :D
+# Happy Contributing. :D
