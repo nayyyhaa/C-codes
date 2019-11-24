@@ -1,5 +1,17 @@
 #include <iostream>
 using namespace std;
+
+/***
+    Swap two numbers
+*/
+
+void swap(int *x, int *y)
+{
+    *x = *x + *y;
+    *y = *x - *y;
+    *x = *x - *y;
+}
+
 int main()
 {
     int a = 5, b = 10, temp;
