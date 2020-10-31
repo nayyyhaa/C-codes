@@ -4,26 +4,18 @@ using namespace std;
 
 int search(int arr[],int l,int r,int x)
 {
-    int mid=0;
-    if(l>r)
-    {
-        cout<<"not found";
-        return 0;
-    }
-    mid=((l+r)/2);
-    if(arr[mid]==x)
-    {
-        cout<<"found";
-    }
-    else if(arr[mid]>x)
-    {
-        return search(arr,l,mid-1,x);
-    }
-    else if(arr[mid]<x)
-    {
-        return search(arr,mid+1,r,x);
-    }
-    return 0;
+     if(r>=l){
+        int mid = l + (r-l) / 2;
+
+        if(arr[mid] == x)
+            return mid;
+         
+        if(x<arr[mid])
+            return search(arr , l , mid-1 , x);
+        
+        return search(arr , mid+1 , r , x);
+     }
+    return -1;
 }
 int main()
 {
