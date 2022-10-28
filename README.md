@@ -1,4 +1,4 @@
-# That's how you do C++.
+# That's how to do C++
 
 # C-codes
 
@@ -13,4 +13,4 @@ Steps to perform:
 4. Try to properly document code wherever possible and necessary (by mentioning comments for making it easy for other developers to understand your code)
 5. Also, if possible, put a commented section of test case and possible explanation for the output
 
-# Happy Contributing! :D
+# Happy Contributing! :)
