@@ -1,4 +1,4 @@
-# That's how to do C++
+# That's how you do C++
 
 # C-codes
 
